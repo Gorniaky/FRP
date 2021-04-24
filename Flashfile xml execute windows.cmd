@@ -14,7 +14,7 @@ pause
 exit
 :startconvert
 findstr "\<software_version\>" flashfile.xml > software_version.txt
-for /F delims^=^"^ Tokens^=2^,4^,6^* %%G in (software_version.txt) DO set title=%%G
+for /F delims^=^"^ Tokens^=2^* %%G in (software_version.txt) DO set title=%%G
 title %title%
 echo @title %title% > flashfile.cmd
 echo mfastboot getvar max-sparse-size >> flashfile.cmd
