@@ -1,0 +1,3 @@
+adb shell "pm list packages -s -f | cut -f 5 -d "/" | sort"
+adb shell pm disable-user --user 0 PACKAGE
+adb shell pm enable --user 0 PACKAGE
