@@ -10,7 +10,7 @@ del software_version.txt
 title %title%
 echo @title %title%>flashfile.cmd
 findstr "\<flash\>" flashfile.xml>flash.txt
-for /F delims^=^"^ tokens^=4 %%a in (flash.txt) do echo @if not exist %%a echo %%a not exist^&set notexistfiles=1>>flashfile.cmd
+for /F delims^=^"^ tokens^=4 %%a in (flash.txt) do echo @if not exist %%a echo %%a not exist^&set notexistfiles=^1>>flashfile.cmd
 (echo @if defined notexistfiles pause^>nul^&exit
 echo mfastboot getvar max-sparse-size
 echo mfastboot oem fb_mode_set)>>flashfile.cmd
